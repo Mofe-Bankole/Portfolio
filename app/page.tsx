@@ -113,7 +113,7 @@ const TRACK_RECORD = [
   { org: "TxODDS World Cup Hackathon", role: "In progress" },
 ];
 
-function hashish(str) {
+function hashish(str: string) {
   let h = 0;
   for (let i = 0; i < str.length; i++) {
     h = (h * 31 + str.charCodeAt(i)) >>> 0;
@@ -121,14 +121,14 @@ function hashish(str) {
   return "0x" + h.toString(16).padStart(8, "0").slice(0, 8);
 }
 
-function statusClass(status) {
+function statusClass(status: string) {
   if (status === "LIVE") return "pill pill-live";
   if (status === "SHIPPED") return "pill pill-shipped";
   if (status === "BUILDING") return "pill pill-building";
   return "pill pill-progress";
 }
 
-function LedgerRow({ project, index }) {
+function LedgerRow({ project: any, index: any }) {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
 
