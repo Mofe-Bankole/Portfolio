@@ -18,7 +18,7 @@ const PROJECTS = [
     detail: "Payment links with built-in yield generation via Scallop.",
     stack: ["Sui Move", "Next.js", "Scallop"],
     meta: "Sui Overflow 2026 · mainnet",
-    github: "",
+    github: "https://github.com/Mofe-Bankole/SuiSend",
     demo: "https://suisend.xyz",
   },
   {
@@ -28,8 +28,8 @@ const PROJECTS = [
       "Solana infra combining Yellowstone gRPC, Jito MEV bundles, and an AI retry agent.",
     stack: ["Yellowstone gRPC", "Jito", "AI agent"],
     meta: "Superteam × SOLINFRA × Jito bounty",
-    github: "",
-    demo: "",
+    github: "https://github.com/Mofe-Bankole/Nerve",
+    demo: "https://x.com/0xcryptooracle/status/2071336561627787391?s=20",
   },
   {
     name: "Tekumi",
@@ -38,7 +38,7 @@ const PROJECTS = [
       "ElizaOS agent for indie game discovery, monetized via affiliate deals.",
     stack: ["ElizaOS", "Next.js", "Docker"],
     meta: "Green Man Gaming · Fanatical · GOG",
-    github: "",
+    github: "https://github.com/Mofe-Bankole/Tekumi",
     demo: "",
   },
   {
@@ -47,8 +47,8 @@ const PROJECTS = [
     detail: "Privacy-preserving payroll built on Umbra, Arcium ZK, and Helius.",
     stack: ["Next.js", "Umbra SDK", "Arcium"],
     meta: "Solana Frontier Hackathon",
-    github: "",
-    demo: "",
+    github: "https://github.com/Mofe-Bankole/Arez",
+    demo: "https://arezonsol.vercel.app/",
   },
   {
     name: "paymoji.sol",
@@ -56,18 +56,8 @@ const PROJECTS = [
     detail: "A naming and identity dApp for Solana wallets.",
     stack: ["Solana", "Next.js", "Tailwind"],
     meta: "Personal build",
-    github: "",
-    demo: "",
-  },
-  {
-    name: "ECM",
-    status: "BUILDING",
-    detail:
-      "A theme-based RWA / DePIN index with an AI portfolio agent handling micropayments.",
-    stack: ["Solana", "AI agent", "x402"],
-    meta: "Exotic Capital Markets",
-    github: "",
-    demo: "",
+    github: "https://github.com/Mofe-Bankole/Paymoji.sol",
+    demo: "https://paymoji-six.vercel.app/",
   },
   {
     name: "Tudor",
@@ -76,7 +66,7 @@ const PROJECTS = [
       "Telegram Mini App for NGN conversion, priced off live FX and crypto rates.",
     stack: ["Next.js", "GrammY", "CoinGecko API"],
     meta: "Hackathon build",
-    github: "",
+    github: "https://github.com/Mofe-Bankole/Tudor",
     demo: "",
   },
   {
@@ -171,19 +161,19 @@ const CONTACTS = [
   {
     platform: "Telegram",
     value: "@yourhandle",
-    href: "https://t.me/yourhandle",
+    href: "https://t.me/@Mofe_banks",
     Icon: Send,
   },
   {
     platform: "WhatsApp",
     value: "Message me",
-    href: "https://wa.me/234XXXXXXXXXX",
+    href: "https://wa.me/2348158214901",
     Icon: MessageCircle,
   },
   {
     platform: "Discord",
     value: "yourhandle",
-    href: "https://discord.com/users/yourhandle",
+    href: "https://discord.com/users/lmn_3x",
     Icon: MessageSquare,
   },
 ];
