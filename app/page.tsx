@@ -256,7 +256,7 @@ function LedgerRow({ project, index }: { project: any; index: number }) {
                 rel="noreferrer"
                 className="ledger-link-btn"
               >
-                <Github size={13} strokeWidth={2} /> Code
+                <FaGithub size={13} strokeWidth={2} /> Code
               </a>
             )}
             {project.demo && (
