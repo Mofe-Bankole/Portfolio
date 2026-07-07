@@ -160,7 +160,7 @@ const CONTACTS = [
   },
   {
     platform: "Telegram",
-    value: "@yourhandle",
+    value: "@Mofe_banks",
     href: "https://t.me/@Mofe_banks",
     Icon: Send,
   },
@@ -172,7 +172,7 @@ const CONTACTS = [
   },
   {
     platform: "Discord",
-    value: "yourhandle",
+    value: "lmn_3x",
     href: "https://discord.com/users/lmn_3x",
     Icon: MessageSquare,
   },
