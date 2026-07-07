@@ -2,13 +2,13 @@
 import { useEffect, useRef, useState } from "react";
 import {
   ArrowUpRight,
-  Github,
   Mail,
   Send,
   MessageCircle,
-  U,
   MessageSquare,
 } from "lucide-react";
+import { FaGithub, FaXTwitter } from "react-icons/fa6";
+import { FaTwitter } from "react-icons/fa";
 
 // Drop your links in below — leave "" to hide that link on a row.
 const PROJECTS = [
@@ -160,13 +160,13 @@ const CONTACTS = [
     platform: "X",
     value: "@Mofe_bnks",
     href: "https://x.com/Mofe_bnks",
-    Icon: Twitter,
+    Icon: FaTwitter,
   },
   {
     platform: "GitHub",
     value: "Mofe-Bankole",
     href: "https://github.com/Mofe-Bankole",
-    Icon: Github,
+    Icon: FaGithub,
   },
   {
     platform: "Telegram",
