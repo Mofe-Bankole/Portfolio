@@ -1,7 +1,16 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { ArrowUpRight, Circle } from "lucide-react";
+import {
+  ArrowUpRight,
+  Github,
+  Mail,
+  Send,
+  MessageCircle,
+  U,
+  MessageSquare,
+} from "lucide-react";
 
+// Drop your links in below — leave "" to hide that link on a row.
 const PROJECTS = [
   {
     name: "SuiSend",
@@ -9,7 +18,8 @@ const PROJECTS = [
     detail: "Payment links with built-in yield generation via Scallop.",
     stack: ["Sui Move", "Next.js", "Scallop"],
     meta: "Sui Overflow 2026 · mainnet",
-    link: "https://suisend.xyz",
+    github: "",
+    demo: "https://suisend.xyz",
   },
   {
     name: "Nerve Pipeline",
@@ -18,7 +28,8 @@ const PROJECTS = [
       "Solana infra combining Yellowstone gRPC, Jito MEV bundles, and an AI retry agent.",
     stack: ["Yellowstone gRPC", "Jito", "AI agent"],
     meta: "Superteam × SOLINFRA × Jito bounty",
-    link: null,
+    github: "",
+    demo: "",
   },
   {
     name: "Tekumi",
@@ -27,7 +38,8 @@ const PROJECTS = [
       "ElizaOS agent for indie game discovery, monetized via affiliate deals.",
     stack: ["ElizaOS", "Next.js", "Docker"],
     meta: "Green Man Gaming · Fanatical · GOG",
-    link: null,
+    github: "",
+    demo: "",
   },
   {
     name: "Arez",
@@ -35,7 +47,8 @@ const PROJECTS = [
     detail: "Privacy-preserving payroll built on Umbra, Arcium ZK, and Helius.",
     stack: ["Next.js", "Umbra SDK", "Arcium"],
     meta: "Solana Frontier Hackathon",
-    link: null,
+    github: "",
+    demo: "",
   },
   {
     name: "paymoji.sol",
@@ -43,7 +56,8 @@ const PROJECTS = [
     detail: "A naming and identity dApp for Solana wallets.",
     stack: ["Solana", "Next.js", "Tailwind"],
     meta: "Personal build",
-    link: null,
+    github: "",
+    demo: "",
   },
   {
     name: "ECM",
@@ -52,16 +66,18 @@ const PROJECTS = [
       "A theme-based RWA / DePIN index with an AI portfolio agent handling micropayments.",
     stack: ["Solana", "AI agent", "x402"],
     meta: "Exotic Capital Markets",
-    link: null,
+    github: "",
+    demo: "",
   },
   {
-    name: "SwiftyEx",
+    name: "Tudor",
     status: "SHIPPED",
     detail:
       "Telegram Mini App for NGN conversion, priced off live FX and crypto rates.",
     stack: ["Next.js", "GrammY", "CoinGecko API"],
     meta: "Hackathon build",
-    link: null,
+    github: "",
+    demo: "",
   },
   {
     name: "OKX AI Genesis — agent track",
@@ -69,7 +85,8 @@ const PROJECTS = [
     detail: "An autonomous agent submission currently in build.",
     stack: ["AI agent", "TypeScript"],
     meta: "Deadline · Jul 17, 2026",
-    link: null,
+    github: "",
+    demo: "",
   },
   {
     name: "TxODDS World Cup Hackathon",
@@ -77,8 +94,15 @@ const PROJECTS = [
     detail: "A prediction-market concept for live match data.",
     stack: ["Prediction markets", "TypeScript"],
     meta: "Deadline · Jul 29, 2026",
-    link: null,
+    github: "",
+    demo: "",
   },
+];
+
+const ABOUT_FACTS = [
+  { label: "Based in", value: "Ibadan, Nigeria" },
+  { label: "Focus", value: "Solana · Sui · multi-chain agents" },
+  { label: "Currently", value: "OKX AI Genesis + TxODDS hackathons" },
 ];
 
 const PRINCIPLES = [
@@ -97,11 +121,22 @@ const PRINCIPLES = [
 ];
 
 const STACK_GROUPS = [
-  { label: "Chains", items: ["Solana", "Sui"] },
-  { label: "Contracts", items: ["Anchor", "Sui Move"] },
-  { label: "Backend", items: ["Fastify", "Node.js", "TypeScript"] },
-  { label: "Frontend", items: ["Next.js", "React", "Tailwind"] },
+  {
+    label: "Chains",
+    items: ["Solana", "Sui", "Ethereum", "Avalanche", "Monad", "Starknet"],
+  },
+  {
+    label: "Languages",
+    items: ["TypeScript", "Rust", "Golang", "JavaScript"],
+  },
+  { label: "Contracts", items: ["Anchor", "Sui Move", "Polkadot"] },
+  {
+    label: "Backend",
+    items: ["Fastify", "Node.js", "Hono.js", "Express", "Deno"],
+  },
+  { label: "Frontend", items: ["Next.js", "React", "Tailwind CSS"] },
   { label: "Agents", items: ["ElizaOS", "OpenRouter", "OpenCode"] },
+  { label: "Auth", items: ["Privy", "zkLogin", "WalletConnect"] },
 ];
 
 const TRACK_RECORD = [
@@ -111,6 +146,46 @@ const TRACK_RECORD = [
   { org: "SOLINFRA × Jito bounty", role: "Building Nerve Pipeline" },
   { org: "OKX AI Genesis Hackathon", role: "In progress — agent track" },
   { org: "TxODDS World Cup Hackathon", role: "In progress" },
+];
+
+// Drop your real handles/links in below.
+const CONTACTS = [
+  {
+    platform: "Email",
+    value: "bankoleadedotun16@gmail.com",
+    href: "mailto:bankoleadedotun16@gmail.com",
+    Icon: Mail,
+  },
+  {
+    platform: "X",
+    value: "@Mofe_bnks",
+    href: "https://x.com/Mofe_bnks",
+    Icon: Twitter,
+  },
+  {
+    platform: "GitHub",
+    value: "Mofe-Bankole",
+    href: "https://github.com/Mofe-Bankole",
+    Icon: Github,
+  },
+  {
+    platform: "Telegram",
+    value: "@yourhandle",
+    href: "https://t.me/yourhandle",
+    Icon: Send,
+  },
+  {
+    platform: "WhatsApp",
+    value: "Message me",
+    href: "https://wa.me/234XXXXXXXXXX",
+    Icon: MessageCircle,
+  },
+  {
+    platform: "Discord",
+    value: "yourhandle",
+    href: "https://discord.com/users/yourhandle",
+    Icon: MessageSquare,
+  },
 ];
 
 function hashish(str: string) {
@@ -128,8 +203,8 @@ function statusClass(status: string) {
   return "pill pill-progress";
 }
 
-function LedgerRow({ project: any, index: any }) {
-  const ref = useRef(null);
+function LedgerRow({ project, index }: { project: any; index: number }) {
+  const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -162,34 +237,47 @@ function LedgerRow({ project: any, index: any }) {
             {project.status}
           </span>
           <h3 className="ledger-name">{project.name}</h3>
-          {project.link && (
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noreferrer"
-              className="ledger-link"
-              aria-label={`Visit ${project.name}`}
-            >
-              <ArrowUpRight size={15} strokeWidth={2} />
-            </a>
-          )}
         </div>
         <p className="ledger-detail">{project.detail}</p>
         <div className="ledger-tags">
-          {project.stack.map((s) => (
+          {project.stack.map((s: string) => (
             <span key={s} className="tag">
               {s}
             </span>
           ))}
           <span className="ledger-meta">{project.meta}</span>
         </div>
+        {(project.github || project.demo) && (
+          <div className="ledger-links">
+            {project.github && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noreferrer"
+                className="ledger-link-btn"
+              >
+                <Github size={13} strokeWidth={2} /> Code
+              </a>
+            )}
+            {project.demo && (
+              <a
+                href={project.demo}
+                target="_blank"
+                rel="noreferrer"
+                className="ledger-link-btn"
+              >
+                <ArrowUpRight size={13} strokeWidth={2} /> Demo
+              </a>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );
 }
 
 export default function Portfolio() {
-  const scrollTo = (id) => {
+  const scrollTo = (id: string) => {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
@@ -229,8 +317,11 @@ export default function Portfolio() {
           letter-spacing: -0.01em;
         }
 
-        .mono {
-          font-family: 'JetBrains Mono', monospace;
+        .mono { font-family: 'JetBrains Mono', monospace; }
+
+        .accent-word {
+          color: var(--signal);
+          font-weight: 700;
         }
 
         .wrap {
@@ -272,10 +363,7 @@ export default function Portfolio() {
           font-size: 16px;
         }
 
-        .navlinks {
-          display: flex;
-          gap: 22px;
-        }
+        .navlinks { display: flex; gap: 22px; }
 
         .navlinks button {
           background: none;
@@ -289,27 +377,13 @@ export default function Portfolio() {
           padding: 4px 0;
         }
 
-        .navlinks button:hover, .navlinks button:focus-visible {
-          color: var(--ink);
-        }
+        .navlinks button:hover, .navlinks button:focus-visible { color: var(--ink); }
 
-        section {
-          padding: 72px 0;
-          border-bottom: 1px solid var(--line);
-        }
-
+        section { padding: 72px 0; border-bottom: 1px solid var(--line); }
         section:last-of-type { border-bottom: none; }
 
-        .hero {
-          padding-top: 88px;
-          padding-bottom: 56px;
-        }
-
-        .hero h1 {
-          font-size: 44px;
-          font-weight: 700;
-          max-width: 700px;
-        }
+        .hero { padding-top: 88px; padding-bottom: 56px; }
+        .hero h1 { font-size: 44px; font-weight: 700; max-width: 700px; }
 
         .hero-sub {
           margin-top: 18px;
@@ -336,15 +410,13 @@ export default function Portfolio() {
           background: var(--ink);
           color: var(--paper);
           transition: transform 0.15s ease, background 0.15s ease;
+          text-decoration: none;
+          display: inline-flex;
+          align-items: center;
         }
 
         .btn:hover { transform: translateY(-1px); background: #232D31; }
-
-        .btn-ghost {
-          background: transparent;
-          color: var(--ink);
-        }
-
+        .btn-ghost { background: transparent; color: var(--ink); }
         .btn-ghost:hover { background: var(--paper-raised); }
 
         .live-strip {
@@ -371,27 +443,51 @@ export default function Portfolio() {
           animation: pulse 2s infinite;
         }
 
-        @keyframes pulse {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0.35; }
-        }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
 
-        .live-strip a {
-          color: var(--signal);
-          text-decoration: none;
-          font-weight: 600;
-        }
-
+        .live-strip a { color: var(--signal); text-decoration: none; font-weight: 600; }
         .live-strip a:hover { text-decoration: underline; }
 
-        .section-head {
-          margin-bottom: 36px;
+        .section-head { margin-bottom: 36px; }
+        .section-head h2 { font-size: 26px; font-weight: 600; }
+
+        .about-grid {
+          display: grid;
+          grid-template-columns: 1.4fr 1fr;
+          gap: 48px;
         }
 
-        .section-head h2 {
-          font-size: 26px;
-          font-weight: 600;
+        .about-text p {
+          color: var(--ink-soft);
+          font-size: 15.5px;
+          margin: 0 0 16px 0;
         }
+
+        .about-text p:last-child { margin-bottom: 0; }
+
+        .about-facts {
+          display: flex;
+          flex-direction: column;
+          gap: 0;
+          height: fit-content;
+          border-top: 1px solid var(--line);
+        }
+
+        .about-fact {
+          padding: 14px 0;
+          border-bottom: 1px solid var(--line);
+        }
+
+        .about-fact-label {
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 11px;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          color: var(--ink-faint);
+          margin-bottom: 4px;
+        }
+
+        .about-fact-value { font-size: 14.5px; font-weight: 500; }
 
         .ledger-row {
           display: grid;
@@ -404,10 +500,7 @@ export default function Portfolio() {
           transition: opacity 0.5s ease, transform 0.5s ease, background 0.2s ease;
         }
 
-        .ledger-row.is-visible {
-          opacity: 1;
-          transform: translateY(0);
-        }
+        .ledger-row.is-visible { opacity: 1; transform: translateY(0); }
 
         .ledger-row:hover {
           background: var(--paper-raised);
@@ -423,25 +516,8 @@ export default function Portfolio() {
           padding-top: 3px;
         }
 
-        .ledger-top {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          flex-wrap: wrap;
-        }
-
-        .ledger-name {
-          font-size: 18px;
-          font-weight: 600;
-        }
-
-        .ledger-link {
-          color: var(--ink-faint);
-          display: inline-flex;
-          margin-left: auto;
-        }
-
-        .ledger-link:hover { color: var(--signal); }
+        .ledger-top { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+        .ledger-name { font-size: 18px; font-weight: 600; }
 
         .ledger-detail {
           margin: 10px 0 12px 0;
@@ -450,12 +526,7 @@ export default function Portfolio() {
           max-width: 520px;
         }
 
-        .ledger-tags {
-          display: flex;
-          gap: 8px;
-          flex-wrap: wrap;
-          align-items: center;
-        }
+        .ledger-tags { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
 
         .tag {
           font-family: 'JetBrains Mono', monospace;
@@ -474,6 +545,21 @@ export default function Portfolio() {
           margin-left: 4px;
         }
 
+        .ledger-links { display: flex; gap: 14px; margin-top: 12px; }
+
+        .ledger-link-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 5px;
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 12px;
+          color: var(--ink-soft);
+          text-decoration: none;
+          border-bottom: 1px solid transparent;
+        }
+
+        .ledger-link-btn:hover { color: var(--signal); border-bottom-color: var(--signal); }
+
         .pill {
           font-family: 'JetBrains Mono', monospace;
           font-size: 11px;
@@ -485,26 +571,10 @@ export default function Portfolio() {
           white-space: nowrap;
         }
 
-        .pill-live {
-          background: var(--signal-soft);
-          color: var(--signal);
-          font-weight: 600;
-        }
-
-        .pill-shipped {
-          border: 1px solid var(--line);
-          color: var(--ink-soft);
-        }
-
-        .pill-building {
-          border: 1px solid var(--accent);
-          color: var(--accent);
-        }
-
-        .pill-progress {
-          border: 1px dashed var(--accent);
-          color: var(--accent);
-        }
+        .pill-live { background: var(--signal-soft); color: var(--signal); font-weight: 600; }
+        .pill-shipped { border: 1px solid var(--line); color: var(--ink-soft); }
+        .pill-building { border: 1px solid var(--accent); color: var(--accent); }
+        .pill-progress { border: 1px dashed var(--accent); color: var(--accent); }
 
         .principles {
           display: grid;
@@ -512,21 +582,10 @@ export default function Portfolio() {
           gap: 28px;
         }
 
-        .principle-card h3 {
-          font-size: 17px;
-          margin-bottom: 10px;
-        }
+        .principle-card h3 { font-size: 17px; margin-bottom: 10px; }
+        .principle-card p { color: var(--ink-soft); font-size: 14.5px; }
 
-        .principle-card p {
-          color: var(--ink-soft);
-          font-size: 14.5px;
-        }
-
-        .stack-groups {
-          display: flex;
-          flex-direction: column;
-          gap: 18px;
-        }
+        .stack-groups { display: flex; flex-direction: column; gap: 18px; }
 
         .stack-row {
           display: grid;
@@ -547,16 +606,9 @@ export default function Portfolio() {
           color: var(--ink-faint);
         }
 
-        .stack-items {
-          display: flex;
-          gap: 8px;
-          flex-wrap: wrap;
-        }
+        .stack-items { display: flex; gap: 8px; flex-wrap: wrap; }
 
-        .track-list {
-          display: flex;
-          flex-direction: column;
-        }
+        .track-list { display: flex; flex-direction: column; }
 
         .track-row {
           display: flex;
@@ -568,7 +620,6 @@ export default function Portfolio() {
         }
 
         .track-row:first-child { border-top: none; }
-
         .track-org { font-weight: 600; }
 
         .track-role {
@@ -587,12 +638,55 @@ export default function Portfolio() {
           max-width: 480px;
         }
 
-        .contact-links {
-          margin-top: 30px;
-          display: flex;
-          gap: 14px;
-          flex-wrap: wrap;
+        .contact-grid {
+          margin-top: 32px;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 12px;
         }
+
+        .contact-card {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          padding: 14px 16px;
+          border: 1px solid var(--line);
+          border-radius: 4px;
+          text-decoration: none;
+          color: var(--ink);
+          background: var(--paper);
+          transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
+        }
+
+        .contact-card:hover {
+          border-color: var(--signal);
+          background: var(--paper-raised);
+          transform: translateY(-1px);
+        }
+
+        .contact-icon {
+          width: 34px;
+          height: 34px;
+          min-width: 34px;
+          border-radius: 50%;
+          background: var(--paper-raised);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: var(--signal);
+        }
+
+        .contact-card:hover .contact-icon { background: var(--signal-soft); }
+
+        .contact-platform {
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 11px;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          color: var(--ink-faint);
+        }
+
+        .contact-value { font-size: 14px; font-weight: 500; }
 
         footer {
           padding: 28px 0 48px 0;
@@ -606,9 +700,11 @@ export default function Portfolio() {
         @media (max-width: 640px) {
           .hero h1 { font-size: 32px; }
           .principles { grid-template-columns: 1fr; }
+          .about-grid { grid-template-columns: 1fr; gap: 28px; }
           .ledger-row { grid-template-columns: 1fr; }
           .ledger-hash { display: none; }
           .stack-row { grid-template-columns: 1fr; gap: 6px; }
+          .contact-grid { grid-template-columns: 1fr; }
           .navlinks { display: none; }
           footer { flex-direction: column; gap: 6px; }
         }
@@ -622,6 +718,7 @@ export default function Portfolio() {
         <div className="topbar-inner">
           <span className="brand">Mofe</span>
           <div className="navlinks">
+            <button onClick={() => scrollTo("about")}>About</button>
             <button onClick={() => scrollTo("ledger")}>Shipped</button>
             <button onClick={() => scrollTo("approach")}>Approach</button>
             <button onClick={() => scrollTo("stack")}>Stack</button>
@@ -633,15 +730,17 @@ export default function Portfolio() {
       <div className="wrap">
         <header className="hero">
           <div className="eyebrow">
-            Solo builder · Solana + Sui · Lagos, Nigeria
+            Solo builder · Solana | Sui | Ethereum | Avalanche | Monad · Ibadan,
+            Nigeria
           </div>
           <h1>
-            I ship full-stack products on Solana and Sui — alone, in public, on
-            deadline.
+            I ship full-stack products on{" "}
+            <span className="accent-word">any chain</span> — alone, in public,
+            on deadline.
           </h1>
           <p className="hero-sub">
-            Founder of Eitherway AI. Member of Superteam Nigeria. I write the
-            contracts, the backend, and the frontend myself, and I use
+            Full-stack blockchain developer. Member of Superteam Nigeria. I
+            write the contracts, the backend, and the frontend myself, and I use
             hackathons as a running proof of work.
           </p>
           <div className="hero-actions">
@@ -663,6 +762,44 @@ export default function Portfolio() {
             </a>
           </div>
         </header>
+
+        <section id="about">
+          <div className="section-head">
+            <div className="eyebrow">Who I am</div>
+            <h2>About</h2>
+          </div>
+          <div className="about-grid">
+            <div className="about-text">
+              <p>
+                I'm a solo full-stack developer building on Solana, Sui, and
+                whatever chain the problem calls for. Most of what I build
+                starts as a hackathon entry and ends up as something people
+                actually use — contracts, backend, and frontend, all built by
+                me, end to end.
+              </p>
+              <p>
+                My workflow is fast and AI-tooling-heavy: I'd rather ship a
+                working version on mainnet this week than a perfect one next
+                quarter. I treat hackathons the way a game theorist treats a
+                repeated game — the point isn't any single prize, it's the
+                reputation and skill that compound every time you show up.
+              </p>
+              <p>
+                When I'm not building, I'm usually reading about Taoism or game
+                theory — both keep showing up in how I approach software: do
+                less, but make sure what's left actually works.
+              </p>
+            </div>
+            <div className="about-facts">
+              {ABOUT_FACTS.map((f) => (
+                <div className="about-fact" key={f.label}>
+                  <div className="about-fact-label">{f.label}</div>
+                  <div className="about-fact-value">{f.value}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
         <section id="ledger">
           <div className="section-head">
@@ -734,25 +871,32 @@ export default function Portfolio() {
           </h2>
           <p className="contact-sub">
             I'm available for ecosystem roles, freelance builds, and hackathon
-            collaborations. Drop me a line.
+            collaborations. Reach me wherever's easiest for you.
           </p>
-          <div className="contact-links">
-            <a className="btn" href="mailto:bankoleadedotun16@gmail.com">
-              Email
-            </a>
-            <a
-              className="btn btn-ghost"
-              href="https://github.com/Mofe-Bankole"
-              target="_blank"
-              rel="noreferrer"
-            >
-              GitHub
-            </a>
+          <div className="contact-grid">
+            {CONTACTS.map(({ platform, value, href, Icon }) => (
+              <a
+                key={platform}
+                className="contact-card"
+                href={href}
+                target={platform === "Email" ? undefined : "_blank"}
+                rel="noreferrer"
+              >
+                <span className="contact-icon">
+                  <Icon size={16} strokeWidth={2} />
+                </span>
+                <span>
+                  <span className="contact-platform">{platform}</span>
+                  <br />
+                  <span className="contact-value">{value}</span>
+                </span>
+              </a>
+            ))}
           </div>
         </section>
 
         <footer>
-          <span>© 2026 Mofe </span>
+          <span>© 2026 Mofe</span>
           <span className="mono">Built solo, shipped often.</span>
         </footer>
       </div>
