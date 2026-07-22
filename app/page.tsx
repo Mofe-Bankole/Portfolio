@@ -72,20 +72,20 @@ const PROJECTS = [
   {
     name: "OKX AI Genesis — agent track",
     status: "IN PROGRESS",
-    detail: "An autonomous agent submission currently in build.",
-    stack: ["AI agent", "TypeScript"],
-    meta: "Deadline · Jul 17, 2026",
+    detail: "A pay-per-call AI agent that scans DeFi protocols across X Layer, Base, and Ethereum and returns ranked, risk-scored yield opportunities with on-chain contract verification.",
+    stack: ["Agent Service Provider", "TypeScript"],
+    meta: "Deadline · Jul 27, 2026",
     github: "",
     demo: "",
   },
   {
-    name: "TxODDS World Cup Hackathon",
-    status: "IN PROGRESS",
-    detail: "A prediction-market concept for live match data.",
+    name: "Finalwhistle",
+    status: "SHIPPED",
+    detail: "FinalWhistle is a decentralized prediction market platform for the 2026 FIFA World Cup, built on Solana. Users stake SOL on match outcomes (winner, over/under, both teams to score). Match results are resolved via TxLINE’s sports data oracle, and payouts execute trustlessly on-chain.",
     stack: ["Prediction markets", "TypeScript"],
     meta: "Deadline · Jul 29, 2026",
-    github: "",
-    demo: "",
+    github: "https://github.com/Mofe-Bankole/FinalWhistle",
+    demo: "https://finalwhistle.xyz/",
   },
 ];
 
@@ -135,7 +135,9 @@ const TRACK_RECORD = [
   { org: "Solana Frontier Hackathon", role: "Entered with ECM & Arez" },
   { org: "SOLINFRA × Jito bounty", role: "Building Nerve Pipeline" },
   { org: "OKX AI Genesis Hackathon", role: "In progress — agent track" },
-  { org: "TxODDS World Cup Hackathon", role: "In progress" },
+  { org: "FinalWhistle built for the TxODDS World Cup Hackathon", role: "Shipped" },
+  { org: "Demeter for the Glaze App Awards", role: "In Progress" },
+
 ];
 
 // Drop your real handles/links in below.
