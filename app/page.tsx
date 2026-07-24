@@ -125,7 +125,7 @@ const STACK_GROUPS = [
     items: ["Fastify", "Node.js", "Hono.js", "Express", "Deno"],
   },
   { label: "Frontend", items: ["Next.js", "React", "Tailwind CSS"] },
-  { label: "Agents", items: ["ElizaOS", "OpenRouter", "OpenCode"] },
+  { label: "Agents", items: ["ElizaOS", "OpenRouter", "OpenCode" , "Glaze"] },
   { label: "Auth", items: ["Privy", "zkLogin", "WalletConnect"] },
 ];
 
@@ -136,7 +136,7 @@ const TRACK_RECORD = [
   { org: "SOLINFRA × Jito bounty", role: "Building Nerve Pipeline" },
   { org: "OKX AI Genesis Hackathon", role: "In progress — agent track" },
   { org: "FinalWhistle built for the TxODDS World Cup Hackathon", role: "Shipped" },
-  { org: "Demeter for the Glaze App Awards", role: "In Progress" },
+  { org: "Build for the Glaze App Awards", role: "In Progress" },
 
 ];
 
